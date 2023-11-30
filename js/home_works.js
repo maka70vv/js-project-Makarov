@@ -1,6 +1,16 @@
 var gmailInput = document.getElementById('gmail_input');
 var gmailButton = document.getElementById('gmail_button');
 var gmailResult = document.getElementById('gmail_result');
+const btnStart = document.getElementById("start");
+const btnStop = document.getElementById("stop");
+const btnReset = document.getElementById("reset");
+
+const divMlSeconds = document.getElementById("ml-secondsS");
+const divSeconds = document.getElementById("secondsS");
+const divMinutes = document.getElementById("minutesS");
+
+var mlSeconds = 0;
+var seconds = 0;
 
 gmailButton.addEventListener('click', function () {
     var enteredEmail = gmailInput.value.trim();
@@ -59,3 +69,39 @@ function dvizhenieIUUUU() {
 }
 
 dvizhenieIUUUU();
+
+let timer = null;
+
+function startTimer() {
+    if (!timer) {
+        timer = setInterval(updateTimer, 10);
+    }
+}
+
+function updateTimer() {
+    mlSeconds++;
+    if (mlSeconds === 100) {
+        mlSeconds = 0;
+        seconds++;
+    }
+    divMlSeconds.textContent = mlSeconds < 10 ? 0${mlSeconds} : mlSeconds;
+    divSeconds.textContent = seconds < 10 ? 0${seconds} : seconds;
+}
+
+function stopTimer() {
+    clearInterval(timer);
+    timer = null;
+}
+
+function resetTimer() {
+    clearInterval(timer);
+    mlSeconds = 0;
+    seconds = 0;
+    divMlSeconds.textContent = "00";
+    divSeconds.textContent = "00";
+    timer = null;
+}
+
+btnStart.addEventListener('click', startTimer);
+btnStop.addEventListener('click', stopTimer);
+btnReset.addEventListener('click', resetTimer);
