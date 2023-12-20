@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/core.css"> 
+    <link rel="stylesheet" href="../css/game.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="container">
+          <div class="inner_header">
+            <a href="../index.html">
+              <div class="logotype">
+                <h2>PLAY<span>BOY ;)</span></h2>
+              </div>
+            </a>
+            <ul class="menu">
+              <li class="menu_link">
+                <a href="../pages/home_works.html">Home Works</a>
+              </li>
+              <li class="menu_link">
+                <a href="../pages/lessons.html">Lessons</a>
+              </li>
+              <li class="menu_link">
+                <a href="../pages/cards.html">Cards</a>
+              </li>
+            </ul>
+            <button class="btn" id="btn-get">Click me!</button>
+            <script>
+              function redirectToGame() {
+                window.location.href = "game.html";
+              }
+
+              const buttonClickMe = document.getElementById("btn-get");
+              buttonClickMe.addEventListener("click", redirectToGame);
+            </script>
+          </div>
+        </div>
+      </div>
+    
+      <canvas id="my-canvas"></canvas>
+    </div>
+
+    <script src="../js/game.js"></script>
+  </body>
+</html>

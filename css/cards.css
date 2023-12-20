@@ -1,0 +1,39 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    min-height: calc(100vh - 180px);
+    padding-bottom: 89px;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 100px;
+}
+h2{
+    color: black;
+}
+
+.card {
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 15px;
+    width: 250px;
+    background-color: #439A86;
+    box-shadow: 0 2px 4px rgb(62, 201, 36);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #000000;
+}
